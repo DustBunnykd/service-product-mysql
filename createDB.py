@@ -9,11 +9,12 @@ DataBase = SQLC.connect(
 
 # Create a cursor object
 Cursor = DataBase.cursor()
-
+print("please enter the database name to create")
+createDB=input()
 # Execute command to create the database
-Cursor.execute("CREATE DATABASE CustomerDB")
+Cursor.execute("CREATE DATABASE " + createDB)
 
-print("Service database is created")
+print("Database " + createDB + " is created")
 Cursor.execute("SHOW DATABASES")
 
 # printing all the databases

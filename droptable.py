@@ -19,11 +19,12 @@ def showtables():
       print("no tables to display")   
 # Create a cursor object
 Cursor = DataBase.cursor()
-
+print("please enter the table to drop")
+droptable=input()
 # Execute command to create the database
-Cursor.execute("DROP TABLE IF EXISTS shift")
+Cursor.execute("DROP TABLE IF EXISTS " + droptable)
 
-print("table shift dropped successfully")
+print("table dropped successfully")
 # printing all the tables
 showtables()
 

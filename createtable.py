@@ -20,7 +20,7 @@ def showtables():
 # preparing a cursor object
 cursorObject = dataBase.cursor()
  
-# creating table 
+# creating table a
 Records = """CREATE TABLE shift (
              Id INT NOT NULL AUTO_INCREMENT,
              Shiftname VARCHAR(255) NOT NULL,

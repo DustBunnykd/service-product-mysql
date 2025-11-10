@@ -10,9 +10,10 @@ dataBase = mysql.connector.connect(
 
 # prepare a cursor object
 cursorObject = dataBase.cursor()
-
+print("enter table name")
+tablename=input()
 # correct SQL syntax and parameter style
-sql = "SELECT * FROM tbl_service"
+sql = "SELECT * FROM " + tablename
   # must be a tuple
 
 cursorObject.execute(sql)
@@ -23,7 +24,7 @@ for i in cursorObject:
 #  commit the change to actually save it
 dataBase.commit()
 #print(sql)
-print("Records retrieved from tbl_service successfully")
+print("Records retrieved from " + tablename + " successfully")
 
 # close the connection
 dataBase.close()
