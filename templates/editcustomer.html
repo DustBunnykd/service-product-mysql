@@ -3,17 +3,18 @@
 {% block title %}Edit Customer{% endblock %}
 
 {% block content %}
-<h2 style="text-align:center; margin-bottom:20px;">Edit Service</h2>
+<h2 style="text-align:center; margin-bottom:20px;">Edit Customer</h2>
 
 <form action="{{ url_for('edit_customer', id=customer.CustomerId) }}" method="POST" style="width:50%; margin:auto;">
     <label for="Customername">Customer Name:</label><br> 
     <input type="text" id="Customername" name="Customername" value="{{ customer.Customername }}" style="width:100%; padding:8px; margin:10px 0;"><br>
     
     <label for="Email">Email:</label><br>
-    <input type="text" id="Email" name="Email" value="{{ Email.Email }}" style="width:100%; padding:8px; margin:10px 0;"><br>
+    <input type="text" id="Email" name="Email" value="{{ customer.Email }}" style="width:100%; padding:8px; margin:10px 0;"><br>
     
-    <label for="ServiceId">ServiceId:</label><br>
-    <input type="text" id="ServiceId" name="ServiceId" value="{{ ServiceID.ServiceId }}" style="width:100%; padding:8px; margin:10px 0;"><br>
+    <label for="ServiceId">Service Id:</label><br>
+    <input type="text" id="ServiceId" name="ServiceId" value="{{ customer.ServiceId }}" style="width:100%; padding:8px; margin:10px 0;"><br>
+    
     <button type="submit" style="padding:8px 15px; background-color:#4CAF50; color:white; border:none; border-radius:5px; cursor:pointer;">Update Customer</button>
 </form>
 

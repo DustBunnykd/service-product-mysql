@@ -1,34 +1,37 @@
 {% extends "base.html" %}
 
-{% block title %}List All Services{% endblock %}
+{% block title %}List All Employees{% endblock %}
 
 {% block content %}
-<h2 class="text-center mt-4 mb-3">All Services</h2>
+<h2 class="text-center mt-4 mb-3">All Employees</h2>
 
 <table border="1" cellpadding="10" cellspacing="0" width="80%" align="center">
     <thead style="background-color:#f0f0f0;">
         <tr>
+            <th>EmployeeId</th>
+            <th>Fullname</th>
+            <th>Email</th>
             <th>ServiceId</th>
-            <th>Service</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         {% for row in rows %}
         <tr>
+            <td>{{ row.EmployeeId }}</td>
+            <td>{{ row.Fullname }}</td>
+            <td>{{ row.Email }}</td>
             <td>{{ row.ServiceId }}</td>
-            <td>{{ row.Services }}</td>
             <td>
-                <!-- Edit -->
-                <form action="{{ url_for('edit_service', id=row.ServiceId) }}" method="GET" style="display:inline;">
+                <!-- Edit employees -->
+                <form action="{{ url_for('edit_employee', id=row.EmployeeId) }}" method="GET" style="display:inline;">
                     <button type="submit" class="edit-btn">Edit</button>
                 </form>
 
-                <!-- Delete -->
-                <form action="{{ url_for('delete_service', id=row.ServiceId) }}" method="POST">
+                <!-- Delete employees-->
+                <form action="{{ url_for('delete_employee', id=row.EmployeeId) }}" method="POST">
     <button type="submit">Delete</button>
 </form>
-
             </td>
         </tr>
         {% endfor %}
@@ -46,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const form = this.closest('.delete-form');
       Swal.fire({
         title: 'Are you sure?',
-        text: "This service will be permanently deleted.",
+        text: "This employee will be permanently deleted.",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#d33',

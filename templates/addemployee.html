@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
-{% block title %}Add Customer{% endblock %}
+{% block title %}Add Employee{% endblock %}
 
 {% block content %}
-<h2 style="text-align:center; margin-bottom:20px;">Add Customer</h2>
+<h2 style="text-align:center; margin-bottom:20px;">Add Employee</h2>
 
-<form action="{{ url_for('add_customer') }}" method="POST" style="width:50%; margin:auto;">
-    <label for="Customername">Customer Name:</label><br>
-    <input type="text" id="Customername" name="Customername" style="width:100%; padding:8px; margin:10px 0;"><br>
+<form action="{{ url_for('add_employee') }}" method="POST" style="width:50%; margin:auto;">
+    <label for="Fullname">Employee Name:</label><br>
+    <input type="text" id="Fullname" name="Fullname" style="width:100%; padding:8px; margin:10px 0;"><br>
     <label for="Email">Email:</label><br>
     <input type="text" id="Email" name="Email" style="width:100%; padding:8px; margin:10px 0;"><br>
     <label for="ServiceId">ServiceId:</label><br>
     <input type="text" id="ServiceId" name="ServiceId" style="width:100%; padding:8px; margin:10px 0;"><br>
    
-    <button type="submit" style="padding:8px 15px; background-color:#4CAF50; color:white; border:none; border-radius:5px; cursor:pointer;">Add Customer</button>
+    <button type="submit" style="padding:8px 15px; background-color:#4CAF50; color:white; border:none; border-radius:5px; cursor:pointer;">Add Employee</button>
 </form>
 
 <!-- SweetAlert2 -->
