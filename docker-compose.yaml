@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: test-mysql-db
+    restart: always
+    env_file: .env
+    ports:
+      - "3307:3306"  # host port 3307, avoids conflicts with local MySQL
+    volumes:
+      - my-datavolume:/var/lib/mysql
+
+  web:
+    build: .
+    container_name: flask-web-app
+    restart: always
+    depends_on:
+      - mysql
+    env_file: .env
+    ports:
+      - "2000:2000"
+    volumes:
+      - .:/app
+    command: ["python", "app.py"]
+
+volumes:
+  my-datavolume:

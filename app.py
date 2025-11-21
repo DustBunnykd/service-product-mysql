@@ -8,13 +8,13 @@ from MySQLdb.cursors import DictCursor
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = os.environ.get("SECRET_KEY", "supersecretkey")  # needed for flash messages
+app.secret_key = os.environ.get("SECRET_KEY", "supersecretkey")
 
-# Configure MySQL
-app.config['MYSQL_HOST'] = os.environ.get('MYSQL_HOST', 'localhost')
-app.config['MYSQL_USER'] = os.environ.get('MYSQL_USER', 'root')
+# MySQL configuration (all from .env)
+app.config['MYSQL_HOST'] = os.environ.get('MYSQL_HOST', 'mysql')
+app.config['MYSQL_USER'] = os.environ.get('MYSQL_USER', 'appuser')
 app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_PASSWORD', '#W15w2020#')
-app.config['MYSQL_DB'] = os.environ.get('MYSQL_DB', 'serviceDB')
+app.config['MYSQL_DB'] = os.environ.get('MYSQL_DATABASE', 'serviceDB')
 
 mysql = MySQL(app)
 
